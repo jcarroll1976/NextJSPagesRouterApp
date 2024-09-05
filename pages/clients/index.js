@@ -6,6 +6,7 @@ export default function ClientsPage() {
         {id:"amy", name:"Amy"},
         {id:"emily", name:"Emily"}
     ]
+
     return (
         <div>
             <h1>The Clients Page</h1>
@@ -13,6 +14,14 @@ export default function ClientsPage() {
                 {clients.map((client) =>
                 <li key={client.id}>
                     <Link href={`/clients/${client.id}`}>{client.name}</Link>
+                    {/*Alternative way of setting Link href*/}
+                    {/*<Link 
+                        href={{
+                        pathname: "/clients/[id]",
+                        query: {id: client.id}}}
+                        >
+                        {client.name}
+                       </Link>*/}
                 </li>)}
             </ul>
         </div>
